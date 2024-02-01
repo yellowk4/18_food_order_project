@@ -2,7 +2,7 @@
 
 ### View Demo
 
-[Demo]: (https://project.io/)
+[링크](https://velog.io/)
 
 ### Installation
 
