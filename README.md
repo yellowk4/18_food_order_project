@@ -1,10 +1,10 @@
 # 18_food_order_project
 
-### View Demo
+### 😎 View Demo
 
-<https://velog.io/>
+<https://project.io/>
 
-### Installation
+### 👍 Installation
 
 다음 단계를 따라 프로젝트를 설치하십시오:
 
