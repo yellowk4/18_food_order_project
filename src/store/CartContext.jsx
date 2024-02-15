@@ -5,6 +5,7 @@ const CartContext = createContext({
   items: [],
   addItem: (item) => {},
   removeItem: (id) => {},
+  clearCart: () => {},
 });
 
 function cartReducer(state, action) {
@@ -44,6 +45,11 @@ function cartReducer(state, action) {
     }
     return { ...state, items: updatedItems }; // state를 업데이트
   }
+
+  if (action.type === 'CLEAR') {
+    return { ...state, items: [] };
+  }
+
   return state;
 }
 
@@ -61,13 +67,18 @@ export function CartContextProvider({ children }) {
     dispatchCartAction({ type: 'REMOVE', id }); //id: id => id로 축약
   }
 
+  function clearCart() {
+    dispatchCartAction({ type: 'CLEAR' });
+  }
+
   const cartContext = {
     items: cart.items,
     addItem, //addItem: addItem => addItem으로 축약
     removeItem, //removeItem: removeItem => removeItem으로 축약
+    clearCart,
   };
 
-  console.log('cartContext', cartContext);
+  // console.log('cartContext', cartContext);
 
   return <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>;
 }
