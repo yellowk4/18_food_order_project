@@ -13,7 +13,6 @@ const requestConfig = {
   headers: {
     'Content-Type': 'application/json',
   },
-  // mode: 'no-cors', // CORS 에러를 방지하기 위해 no-cors 모드로 설정
 };
 
 export default function Checkout() {

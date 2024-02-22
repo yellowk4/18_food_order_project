@@ -2,20 +2,16 @@ import { useEffect, useState, useCallback } from 'react';
 
 async function sendHttpRequest(url, config) {
   console.log('Sending request to', url, 'with config', config);
-  try {
-    const response = await fetch(url, config);
-    console.log('Received response', response);
-    const resData = await response.json();
-    console.log('Response data', resData);
+  const response = await fetch(url, config);
+  console.log('Received response', response);
+  const resData = await response.json();
+  console.log('Response data', resData);
 
-    if (!response.ok) {
-      throw new Error(resData.message || '요청 실패!');
-    }
-
-    return resData;
-  } catch (error) {
-    console.error('Error:', error);
+  if (!response.ok) {
+    throw new Error(resData.message || '요청 실패!');
   }
+
+  return resData;
 }
 
 export default function useHttp(url, config, initialData) {
